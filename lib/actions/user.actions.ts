@@ -8,6 +8,7 @@ import Project from '../database/models/project.model'
 import { handleError } from '@/lib/utils'
 
 import { CreateUserParams, UpdateUserParams } from '@/types'
+import Order from '../database/models/order.model'
 
 export async function createUser(user: CreateUserParams) {
   try {

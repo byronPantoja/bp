@@ -28,7 +28,7 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
             currency: 'usd',
             unit_amount: price,
             product_data: {
-              name: order.eventTitle,
+              name: order.projectTitle,
             },
           },
           quantity: 1,

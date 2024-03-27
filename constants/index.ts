@@ -1,7 +1,7 @@
 export const headerLinks = [
   {
-    label: 'Add Projects',
-    route: '/projects/add',
+    label: 'Create Project',
+    route: '/projects/create',
   },
   {
     label: 'My Profile',

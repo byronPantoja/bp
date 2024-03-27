@@ -53,7 +53,7 @@ export default async function Home() {
         className='wrapper my-8 flex flex-col gap-8 md:gap-12'
       >
         <h2 className='h2-bold'>
-          Trust by <br /> Thousands of Events
+          Trust by <br /> Thousands of Projects
         </h2>
         {/* 
         <div className='flex w-full flex-col gap-5 md:flex-row'>
@@ -63,9 +63,9 @@ export default async function Home() {
 
         {/* <Collection
           data={projects?.data}
-          emptyTitle='No Events Found'
+          emptyTitle='No Projects Found'
           emptyStateSubtext='Come back later'
-          collectionType='All_Events'
+          collectionType='All_Projects'
           limit={6}
           page={page}
           totalPages={projects?.totalPages}

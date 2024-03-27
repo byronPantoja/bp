@@ -11,13 +11,14 @@ export const headerLinks = [
 
 export const projectDefaultValues = {
   title: '',
-  description: '',
-  location: '',
+  purpose: '',
+  investment: '',
+  benefits: '',
+  isProbono: '',
   imageUrl: '',
-  startDateTime: new Date(),
-  endDateTime: new Date(),
-  categoryId: '',
-  price: '',
-  isFree: false,
+  location: '',
+  startDateTime: '',
+  endDateTime: '',
   url: '',
+  categoryId: '',
 }

@@ -28,6 +28,7 @@ export type CreateProjectParams = {
     location: string
     startDateTime: Date
     endDateTime: Date
+    categoryId: string
     url: string
   }
   path: string
@@ -46,6 +47,7 @@ export type UpdateProjectParams = {
     location: string
     startDateTime: Date
     endDateTime: Date
+    categoryId: string
     url: string
   }
   path: string
@@ -75,8 +77,6 @@ export type GetRelatedProjectsByCategoryParams = {
   limit?: number
   page: number | string
 }
-
-// TODO: Update all 'event' to 'project' type.
 
 export type Project = {
   _id: string
@@ -110,8 +110,8 @@ export type CreateCategoryParams = {
 export type CheckoutOrderParams = {
   projectTitle: string
   projectId: string
-  price: string
-  isFree: boolean
+  investment: string
+  isProbono: boolean
   buyerId: string
 }
 

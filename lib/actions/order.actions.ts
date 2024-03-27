@@ -154,7 +154,7 @@ export async function getOrdersByUser({
         },
       })
 
-    const ordersCount = await Order.distinct('event._id').countDocuments(
+    const ordersCount = await Order.distinct('project._id').countDocuments(
       conditions
     )
 

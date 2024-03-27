@@ -10,7 +10,7 @@ const poppins = Poppins({
 })
 export const metadata: Metadata = {
   title: 'Projects App',
-  description: 'For Events',
+  description: 'For Projects',
   icons: {
     icon: '/assets/images/logo.svg',
   },

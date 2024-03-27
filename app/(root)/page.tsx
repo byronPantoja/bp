@@ -2,7 +2,7 @@
 // import Collection from '@/components/shared/Collection'
 // import Search from '@/components/shared/Search'
 import { Button } from '@/components/ui/button'
-// import { getAllEvents } from '@/lib/actions/event.actions'
+// import { getAllProjects } from '@/lib/actions/event.actions'
 // import { SearchParamProps } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ export default async function Home() {
   // const searchText = (searchParams?.query as string) || ''
   // const category = (searchParams?.category as string) || ''
 
-  // const events = await getAllEvents({
+  // const projects = await getAllProjects({
   //   query: searchText,
   //   category,
   //   page,
@@ -34,7 +34,7 @@ export default async function Home() {
               someone to help them bring it to life.
             </p>
             <Button size='lg' asChild className='button w-full sm:w-fit'>
-              <Link href='#events'>See My Projects</Link>
+              <Link href='#projects'>See My Projects</Link>
             </Button>
           </div>
 
@@ -49,7 +49,7 @@ export default async function Home() {
       </section>
 
       <section
-        id='events'
+        id='projects'
         className='wrapper my-8 flex flex-col gap-8 md:gap-12'
       >
         <h2 className='h2-bold'>
@@ -62,13 +62,13 @@ export default async function Home() {
         </div> */}
 
         {/* <Collection
-          data={events?.data}
+          data={projects?.data}
           emptyTitle='No Events Found'
           emptyStateSubtext='Come back later'
           collectionType='All_Events'
           limit={6}
           page={page}
-          totalPages={events?.totalPages}
+          totalPages={projects?.totalPages}
         /> */}
       </section>
     </>

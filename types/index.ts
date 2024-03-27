@@ -18,16 +18,16 @@ export type UpdateUserParams = {
 // ====== PROJECT PARAMS
 export type CreateProjectParams = {
   userId: string
-  event: {
+  project: {
     title: string
-    description: string
-    location: string
+    purpose: string
+    investment: string
+    benefits: string
+    isProbono: boolean
     imageUrl: string
+    location: string
     startDateTime: Date
     endDateTime: Date
-    categoryId: string
-    price: string
-    isFree: boolean
     url: string
   }
   path: string
@@ -35,24 +35,24 @@ export type CreateProjectParams = {
 
 export type UpdateProjectParams = {
   userId: string
-  event: {
+  project: {
     _id: string
     title: string
+    purpose: string
+    investment: string
+    benefits: string
+    isProbono: boolean
     imageUrl: string
-    description: string
     location: string
     startDateTime: Date
     endDateTime: Date
-    categoryId: string
-    price: string
-    isFree: boolean
     url: string
   }
   path: string
 }
 
 export type DeleteProjectParams = {
-  eventId: string
+  projectId: string
   path: string
 }
 
@@ -71,7 +71,7 @@ export type GetProjectsByUserParams = {
 
 export type GetRelatedProjectsByCategoryParams = {
   categoryId: string
-  eventId: string
+  projectId: string
   limit?: number
   page: number | string
 }
@@ -108,8 +108,8 @@ export type CreateCategoryParams = {
 
 // ====== ORDER PARAMS
 export type CheckoutOrderParams = {
-  eventTitle: string
-  eventId: string
+  projectTitle: string
+  projectId: string
   price: string
   isFree: boolean
   buyerId: string
@@ -117,14 +117,14 @@ export type CheckoutOrderParams = {
 
 export type CreateOrderParams = {
   stripeId: string
-  eventId: string
+  projectId: string
   buyerId: string
   totalAmount: string
   createdAt: Date
 }
 
-export type GetOrdersByEventParams = {
-  eventId: string
+export type GetOrdersByProjectParams = {
+  projectId: string
   searchString: string
 }
 

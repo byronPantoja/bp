@@ -94,8 +94,8 @@ const ProjectDetails = async ({
                 {project.purpose}
               </p>
               <p className='p-medium-16 lg:p-regular-18'>
-                <span className='p-bold-20 text-grey-600'>Benefits: </span>
                 {project.benefits}
+                <span className='p-bold-20 text-grey-600'>Benefits: </span>
               </p>
               <p className='p-medium-16 lg:p-regular-18'>
                 <span className='p-bold-20 text-grey-600'>Investment: </span>
@@ -114,7 +114,7 @@ const ProjectDetails = async ({
         </div>
       </section>
 
-      {/* EVENTS with the same category */}
+      {/* Project with the same category */}
       <section className='wrapper my-8 flex flex-col gap-8 md:gap-12'>
         <h2 className='h2-bold'>Related Projects</h2>
 

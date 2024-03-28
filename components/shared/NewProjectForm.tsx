@@ -383,7 +383,7 @@ const ProjectForm = ({
                     />
 
                     <Input
-                      placeholder='Event location or Online'
+                      placeholder='Project location or Online'
                       {...field}
                       className='input-field'
                     />
@@ -400,7 +400,7 @@ const ProjectForm = ({
           disabled={form.formState.isSubmitting}
           className='button col-span-2 w-full'
         >
-          {form.formState.isSubmitting ? 'Submitting...' : `${type} Event `}
+          {form.formState.isSubmitting ? 'Submitting...' : `${type} Project `}
         </Button>
       </form>
     </Form>

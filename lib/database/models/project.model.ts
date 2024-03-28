@@ -5,6 +5,7 @@ export interface IProject extends Document {
   title: string
   purpose: string
   investment: string
+  price: string
   benifits: string
   isProbono: boolean
   imageUrl: string
@@ -21,6 +22,7 @@ const ProjectSchema = new Schema({
   title: { type: String, required: true },
   purpose: { type: String },
   investment: { type: String },
+  price: { type: String },
   benifits: { type: String },
   isProbono: { type: Boolean, default: false },
   imageUrl: { type: String, required: true },

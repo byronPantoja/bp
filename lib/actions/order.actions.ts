@@ -148,7 +148,7 @@ export async function getOrdersByUser({
         path: 'project',
         model: Project,
         populate: {
-          path: 'organizer',
+          path: 'projectManager',
           model: User,
           select: '_id firstName lastName',
         },

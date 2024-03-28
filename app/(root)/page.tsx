@@ -1,24 +1,23 @@
-// import CategoryFilter from '@/components/shared/CategoryFilter'
-// import Collection from '@/components/shared/Collection'
-// import Search from '@/components/shared/Search'
+import CategoryFilter from '@/components/shared/CategoryFilter'
+import Collection from '@/components/shared/Collection'
+import Search from '@/components/shared/Search'
 import { Button } from '@/components/ui/button'
-// import { getAllProjects } from '@/lib/actions/event.actions'
-// import { SearchParamProps } from '@/types'
+import { getAllProjects } from '@/lib/actions/project.actions'
+import { SearchParamProps } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function Home() {
-  // { searchParams }: SearchParamProps
-  // const page = Number(searchParams?.page) || 1
-  // const searchText = (searchParams?.query as string) || ''
-  // const category = (searchParams?.category as string) || ''
+export default async function Home({ searchParams }: SearchParamProps) {
+  const page = Number(searchParams?.page) || 1
+  const searchText = (searchParams?.query as string) || ''
+  const category = (searchParams?.category as string) || ''
 
-  // const projects = await getAllProjects({
-  //   query: searchText,
-  //   category,
-  //   page,
-  //   limit: 6,
-  // })
+  const projects = await getAllProjects({
+    query: searchText,
+    category,
+    page,
+    limit: 6,
+  })
 
   return (
     <>
@@ -52,16 +51,18 @@ export default async function Home() {
         id='projects'
         className='wrapper my-8 flex flex-col gap-8 md:gap-12'
       >
-        <h2 className='h2-bold'>
-          Trust by <br /> Thousands of Projects
-        </h2>
-        {/* 
+        <p className='flex justify-center'>
+          "If you want to go fast, go alone. If you want to go far, go
+          together."
+        </p>
+        <h2 className='flex justify-center h2-bold'>Let's Work Together</h2>
+
         <div className='flex w-full flex-col gap-5 md:flex-row'>
           <Search />
           <CategoryFilter />
-        </div> */}
+        </div>
 
-        {/* <Collection
+        <Collection
           data={projects?.data}
           emptyTitle='No Projects Found'
           emptyStateSubtext='Come back later'
@@ -69,7 +70,7 @@ export default async function Home() {
           limit={6}
           page={page}
           totalPages={projects?.totalPages}
-        /> */}
+        />
       </section>
     </>
   )

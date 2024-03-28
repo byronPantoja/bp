@@ -25,7 +25,6 @@ const Card = ({ project, hasOrderLink, hidePrice }: CardProps) => {
         style={{ backgroundImage: `url(${project.imageUrl})` }}
         className='flex-center flex-grow bg-gray-50 bg-cover bg-center text-grey-500'
       />
-      {/* IS PROJECT CREATOR ... */}
 
       {isProjectCreator && !hidePrice && (
         <div className='absolute right-2 top-2 flex flex-col gap-4 rounded-xl bg-white p-3 shadow-sm transition-all'>
@@ -41,34 +40,33 @@ const Card = ({ project, hasOrderLink, hidePrice }: CardProps) => {
           <DeleteConfirmation projectId={project._id} />
         </div>
       )}
-
       <div className='flex min-h-[230px] flex-col gap-3 p-5 md:gap-4'>
         {!hidePrice && (
           <div className='flex gap-2'>
-            <span className='p-semibold-14 w-min rounded-full bg-green-100 px-4 py-1 text-green-60'>
-              {project.isProbono ? 'FREE' : `$${project.investment}`}
+            <span className='p-semibold-14 rounded-full bg-green-100 px-4 py-1 text-green-60'>
+              {project.isProbono ? 'Pro Bono' : `$${project.investment}`}
             </span>
             <p className='p-semibold-14 w-min rounded-full bg-grey-500/10 px-4 py-1 text-grey-500 line-clamp-1'>
               {project.category.name}
             </p>
           </div>
         )}
-
-        <p className='p-medium-16 p-medium-18 text-grey-500'>
-          {formatDateTime(project.startDateTime).dateTime}
-        </p>
-
-        <Link href={`/projects/${project._id}`}>
-          <p className='p-medium-16 md:p-medium-20 line-clamp-2 flex-1 text-black'>
-            {project.title}
+        <div className='pt-5'>
+          <Link href={`/projects/${project._id}`}>
+            <p className='p-medium-16 md:p-medium-20 line-clamp-2 flex-1 text-black'>
+              {project.title}
+            </p>
+          </Link>
+          <p className='p-medium-10 md:p-medium-14 line-clamp-2 flex-1 text-black'>
+            Project Duration
           </p>
-        </Link>
-
+          <p className='p-medium-16 p-medium-18 text-grey-500'>
+            {formatDateTime(project.startDateTime).dateTime}
+            {' - '}
+            {formatDateTime(project.endDateTime).dateTime}
+          </p>
+        </div>
         <div className='flex-between w-full'>
-          <p className='p-medium-14 md:p-medium-16 text-grey-600'>
-            {project.projectManager.firstName} {project.projectManager.lastName}
-          </p>
-
           {hasOrderLink && (
             <Link
               href={`/orders?projectId=${project._id}`}

@@ -1,11 +1,19 @@
-import NewProjectForm from '@/components/shared/NewProjectForm'
+import ProjectForm from '@/components/shared/NewProjectForm'
+import { getProjectById } from '@/lib/actions/project.actions'
 import { auth } from '@clerk/nextjs'
 
-const UpdateProject = () => {
+type UpdateProjectProps = {
+  params: {
+    id: string
+  }
+}
+
+const UpdateProject = async ({ params: { id } }: UpdateProjectProps) => {
   const { sessionClaims } = auth()
 
   const userId = sessionClaims?.userId as string
-  console.log(userId)
+  const project = await getProjectById(id)
+
   return (
     <>
       <section className='bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10'>
@@ -15,7 +23,12 @@ const UpdateProject = () => {
       </section>
 
       <div className='wrapper my-8'>
-        <NewProjectForm userId={userId} type='Create' />
+        <ProjectForm
+          type='Update'
+          project={project}
+          projectId={project._id}
+          userId={userId}
+        />
       </div>
     </>
   )

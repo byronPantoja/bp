@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache'
 
 import { connectToDatabase } from '@/lib/database'
-import Event from '@/lib/database/models/project.model'
+import Project from '@/lib/database/models/project.model'
 import User from '@/lib/database/models/user.model'
 import Category from '@/lib/database/models/category.model'
 import { handleError } from '@/lib/utils'
@@ -16,7 +16,6 @@ import {
   GetRelatedProjectsByCategoryParams,
   GetAllProjectsParams,
 } from '@/types'
-import Project from '@/lib/database/models/project.model'
 
 const getCategoryByName = async (name: string) => {
   return Category.findOne({ name: { $regex: name, $options: 'i' } })
@@ -25,7 +24,7 @@ const getCategoryByName = async (name: string) => {
 const populateProject = (query: any) => {
   return query
     .populate({
-      path: 'organizer',
+      path: 'projectManager',
       model: User,
       select: '_id firstName lastName',
     })
@@ -41,13 +40,13 @@ export async function createProject({
   try {
     await connectToDatabase()
 
-    const organizer = await User.findById(userId)
-    if (!organizer) throw new Error('Organizer not found')
+    const projectManager = await User.findById(userId)
+    if (!projectManager) throw new Error('Project Manager not found')
 
     const newProject = await Project.create({
       ...project,
       category: project.categoryId,
-      organizer: userId,
+      projectManager: userId,
     })
     revalidatePath(path)
 
@@ -84,7 +83,7 @@ export async function updateProject({
     const projectToUpdate = await Project.findById(project._id)
     if (
       !projectToUpdate ||
-      projectToUpdate.organizer.toHexString() !== userId
+      projectToUpdate.projectManager.toHexString() !== userId
     ) {
       throw new Error('Unauthorized or project not found')
     }
@@ -155,7 +154,7 @@ export async function getAllProjects({
   }
 }
 
-// GET PROJECT BY ORGANIZER
+// GET PROJECT BY PROJECT MANAGER
 export async function getProjectsByUser({
   userId,
   limit = 6,
@@ -164,7 +163,7 @@ export async function getProjectsByUser({
   try {
     await connectToDatabase()
 
-    const conditions = { organizer: userId }
+    const conditions = { projectManager: userId }
     const skipAmount = (page - 1) * limit
 
     const projectQuery = Project.find(conditions)

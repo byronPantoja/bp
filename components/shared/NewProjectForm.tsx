@@ -231,6 +231,7 @@ const ProjectForm = ({
               <FormItem className='w-full'>
                 <FormControl>
                   <div className='flex-center h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2'>
+                    {/* TODO: Replace with PH Peso svg */}
                     <Image
                       src='/assets/icons/dollar.svg'
                       alt='dollar'

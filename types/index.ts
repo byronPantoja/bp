@@ -22,6 +22,7 @@ export type CreateProjectParams = {
     title: string
     purpose: string
     investment: string
+    price: string
     benefits: string
     isProbono: boolean
     imageUrl: string
@@ -41,6 +42,7 @@ export type UpdateProjectParams = {
     title: string
     purpose: string
     investment: string
+    price: string
     benefits: string
     isProbono: boolean
     imageUrl: string
@@ -83,6 +85,7 @@ export type Project = {
   title: string
   purpose: string
   investment: string
+  price: string
   benefits: string
   isProbono: boolean
   imageUrl: string
@@ -112,6 +115,7 @@ export type CheckoutOrderParams = {
   projectId: string
   investment: string
   isProbono: boolean
+  price: string
   buyerId: string
 }
 

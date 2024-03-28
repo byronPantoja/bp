@@ -226,7 +226,7 @@ const ProjectForm = ({
         <div className='flex flex-col gap-5 md:flex-row'>
           <FormField
             control={form.control}
-            name='investment'
+            name='price'
             render={({ field }) => (
               <FormItem className='w-full'>
                 <FormControl>

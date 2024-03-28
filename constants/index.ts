@@ -14,6 +14,7 @@ export const projectDefaultValues = {
   purpose: '',
   investment: '',
   benefits: '',
+  price: '',
   isProbono: '',
   imageUrl: '',
   location: '',

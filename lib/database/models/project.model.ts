@@ -3,17 +3,17 @@ import { Document, Schema, model, models } from 'mongoose'
 export interface IProject extends Document {
   _id: string
   title: string
-  purpose: string
-  investment: string
-  price: string
-  benifits: string
+  purpose?: string
+  investment?: string
+  price?: string
+  benefits?: string
   isProbono: boolean
   imageUrl: string
   location: string
   createdAt: Date
   startDateTime: Date
   endDateTime: Date
-  url: string
+  url?: string
   category: { _id: string; name: string }
   projectManager: { _id: string; firstName: string; lastName: string }
 }
@@ -23,7 +23,7 @@ const ProjectSchema = new Schema({
   purpose: { type: String },
   investment: { type: String },
   price: { type: String },
-  benifits: { type: String },
+  benefits: { type: String },
   isProbono: { type: Boolean, default: false },
   imageUrl: { type: String, required: true },
   location: { type: String },

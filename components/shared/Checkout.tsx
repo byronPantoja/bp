@@ -33,6 +33,7 @@ const Checkout = ({
       eventTitle: project.title,
       eventId: project._id,
       investment: project.investment,
+      price: project.price,
       isProbono: project.isProbono,
       buyerId: userId,
     }

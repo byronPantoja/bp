@@ -24,6 +24,7 @@ import Image from 'next/image'
 import DatePicker from 'react-datepicker'
 import { useUploadThing } from '@/lib/uploadthing'
 import { Textarea } from '@/components/ui/textarea'
+
 import 'react-datepicker/dist/react-datepicker.css'
 import { Checkbox } from '../ui/checkbox'
 import { useRouter } from 'next/navigation'
@@ -58,7 +59,12 @@ const ProjectForm = ({
 
   const form = useForm<z.infer<typeof projectFormSchema>>({
     resolver: zodResolver(projectFormSchema),
-    defaultValues: initialValues,
+    defaultValues: {
+      ...initialValues,
+      startDateTime: new Date(initialValues.startDateTime),
+      endDateTime: new Date(initialValues.endDateTime),
+      isProbono: false, // Set isProbono to a boolean value
+    },
   })
 
   async function onSubmit(values: z.infer<typeof projectFormSchema>) {

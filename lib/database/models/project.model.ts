@@ -3,7 +3,7 @@ import { Document, Schema, model, models } from 'mongoose'
 export interface IProject extends Document {
   _id: string
   title: string
-  purpose?: string
+  purpose: string
   investment: string
   price: string
   benefits: string

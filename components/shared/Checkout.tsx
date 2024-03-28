@@ -32,7 +32,6 @@ const Checkout = ({
     const order = {
       projectTitle: project.title,
       projectId: project._id,
-      investment: project.investment,
       price: project.price,
       isProbono: project.isProbono,
       buyerId: userId,

@@ -59,12 +59,7 @@ const ProjectForm = ({
 
   const form = useForm<z.infer<typeof projectFormSchema>>({
     resolver: zodResolver(projectFormSchema),
-    defaultValues: {
-      ...initialValues,
-      startDateTime: new Date(initialValues.startDateTime),
-      endDateTime: new Date(initialValues.endDateTime),
-      isProbono: false, // Set isProbono to a boolean value
-    },
+    defaultValues: initialValues,
   })
 
   async function onSubmit(values: z.infer<typeof projectFormSchema>) {

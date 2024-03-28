@@ -113,7 +113,6 @@ export type CreateCategoryParams = {
 export type CheckoutOrderParams = {
   projectTitle: string
   projectId: string
-  investment: string
   isProbono: boolean
   price: string
   buyerId: string

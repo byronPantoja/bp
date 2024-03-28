@@ -94,9 +94,8 @@ const ProjectDetails = async ({
                 {project.purpose}
               </p>
               <p className='p-medium-16 lg:p-regular-18'>
-                {project.benefits}
-                {console.log(project.benefits)}
                 <span className='p-bold-20 text-grey-600'>Benefits: </span>
+                {project.benefits}
               </p>
               <p className='p-medium-16 lg:p-regular-18'>
                 <span className='p-bold-20 text-grey-600'>Investment: </span>

@@ -38,5 +38,3 @@ const ProjectSchema = new Schema({
 const Project = models.Project || model('Project', ProjectSchema)
 
 export default Project
-
-// TODO: Add webhooks for Clerk & MongoDB @ 1:12:34

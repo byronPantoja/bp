@@ -18,7 +18,7 @@ import Project from '../database/models/project.model'
 export const checkoutOrder = async (order: CheckoutOrderParams) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
-  const investment = order.isProbono ? 0 : Number(order.investment) * 100
+  const price = order.isProbono ? 0 : Number(order.price) * 100
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -26,7 +26,7 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
         {
           price_data: {
             currency: 'php',
-            unit_amount: investment,
+            unit_amount: price,
             product_data: {
               name: order.projectTitle,
             },

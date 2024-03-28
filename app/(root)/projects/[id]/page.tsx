@@ -95,6 +95,7 @@ const ProjectDetails = async ({
               </p>
               <p className='p-medium-16 lg:p-regular-18'>
                 {project.benefits}
+                {console.log(project.benefits)}
                 <span className='p-bold-20 text-grey-600'>Benefits: </span>
               </p>
               <p className='p-medium-16 lg:p-regular-18'>

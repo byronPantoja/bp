@@ -4,9 +4,9 @@ export interface IProject extends Document {
   _id: string
   title: string
   purpose?: string
-  investment?: string
-  price?: string
-  benefits?: string
+  investment: string
+  price: string
+  benefits: string
   isProbono: boolean
   imageUrl: string
   location: string

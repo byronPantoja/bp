@@ -30,8 +30,8 @@ const Checkout = ({
 
   const onCheckout = async () => {
     const order = {
-      eventTitle: project.title,
-      eventId: project._id,
+      projectTitle: project.title,
+      projectId: project._id,
       investment: project.investment,
       price: project.price,
       isProbono: project.isProbono,

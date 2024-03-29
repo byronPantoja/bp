@@ -19,16 +19,16 @@ const Header = () => {
           />
         </Link>
 
-        <SignedIn>
-          <nav className='md:flex-between hidden w-full max-w-xs'>
-            <NavItems />
-          </nav>
-        </SignedIn>
         <div className='flex w-32 justify-end g-3'>
           <SignedIn>
-            <div className='pr-2'>
+            <div className='flex items-center justify-between'>
+              <nav className='md:flex-between hidden w-full max-w-xs pr-2'>
+                <NavItems />
+              </nav>
+
               <UserButton afterSignOutUrl='/' />
             </div>
+
             <MobileNav />
           </SignedIn>
           <SignedOut>

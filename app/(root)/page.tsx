@@ -33,7 +33,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
               someone to help them bring it to life.
             </p>
             <Button size='lg' asChild className='button w-full sm:w-fit'>
-              <Link href='#projects'>See My Projects</Link>
+              <Link href='/contact'>Contact Me</Link>
             </Button>
           </div>
 

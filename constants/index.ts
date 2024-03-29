@@ -3,10 +3,6 @@ export const headerLinks = [
     label: 'Create Project',
     route: '/projects/create',
   },
-  {
-    label: 'My Profile',
-    route: '/profile',
-  },
 ]
 
 export const projectDefaultValues = {

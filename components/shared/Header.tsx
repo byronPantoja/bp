@@ -32,9 +32,7 @@ const Header = () => {
             <MobileNav />
           </SignedIn>
           <SignedOut>
-            <Button asChild className='rounded-full' size='lg'>
-              <Link href='/contact'>Contact</Link>
-            </Button>
+            <p>Learn.Work.Repeat.</p>
           </SignedOut>
         </div>
       </div>
